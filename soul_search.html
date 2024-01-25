@@ -1,0 +1,98 @@
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet" href="style.css">
+ <center>
+  <!-- buttons -->
+  
+   <table>
+    <tbody>
+     <tr>
+      <th>
+       <button onclick="sendToSearch('Help me with a relationship!')" id="sample1" class="sample_questions">
+        <b>Help me with a relationship!</b>
+       </button>
+      </th>
+      <th>
+       <button onclick="sendToSearch('What do I do about an angry boss?')" id="sample2" class="sample_questions">
+        <b>What do I do about an angry boss?</b>
+       </button>
+      </th>
+     </tr>
+     <tr>
+      <td>
+       <button onclick="sendToSearch('How can I heal from a health challenge?')" id="sample3" class="sample_questions">
+        <b>How can I heal from a health challenge?</b>
+       </button>
+      </td>
+      <td>
+       <button onclick="sendToSearch('How can I inspire more creativity?')" id="sample5" class="sample_questions">
+        <b>How can I inspire more creativity?</b>
+       </button>
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  <br>
+  <!-- Search input -->
+  <input type="text" id="searchInput" placeholder="Type your custom question here..." style="width:100%;display:inline-block;border-style:solid;border-color:#df8a29">
+  <br>
+  <div id="settings">
+    <label class="container">
+     A Course in Miracles
+     <input type="radio" id="ACIM" name="source" value="ACIM">
+     <span class="checkmark">
+     </span>
+    </label>
+    <label class="container">
+     Bible
+     <input type="radio" id="Bible" name="source" value="Bible">
+     <span class="checkmark">
+     </span>
+    </label>
+    <label class="container">
+     Dao De Jing
+     <input type="radio" id="Dao" name="source" value="Dao">
+     <span class="checkmark">
+     </span>
+    </label>
+    <label class="container">
+     Bhagavad Gita
+     <input type="radio" id="Gita" name="source" value="Gita">
+     <span class="checkmark">
+     </span>
+    </label>
+    <label class="container">
+      Surprise Me
+      <input type="radio" id="All" name="source" value="All" checked="checked">
+      <span class="checkmark">
+      </span>
+     </label>
+   </div>
+  <br>
+  <button class="button" onclick="sendToSearch()" id="search">
+   Search
+  </button>
+  <br>
+  <div class="loader" id="loader" style="display:none">
+  </div>
+  <!-- Container to display results -->
+  <div id="results" class="results">
+  </div>
+ </center>
+ <script src="script.js">
+ </script>
+ <script>
+  var input = document.getElementById("searchInput");
+  	 input.addEventListener("keypress", function(event) {
+	  // If the user presses the "Enter" key on the keyboard
+	  if (event.key === "Enter") {
+	    // Cancel the default action, if needed
+	    event.preventDefault();
+	    // Trigger the button element with a click
+	    document.getElementById("search").click();
+	  }
+	});
+ </script>
+</html>
